@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ChitietSanPhamController!{% endblock %}
+
+{% block body %}
+<div class="container-fluid pt-5 pb-3">
+    <div class="row px-xl-5">
+        <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+            <div class="product-item bg-light mb-4">
+                <div class="product-img position-relative overflow-hidden">
+                    <img class="img-fluid w-100"
+                        src="https://cdn.hoanghamobile.com/i/productlist/dsp/Uploads/2023/06/06/mba15-silver-1.png"
+                        alt="Hình ảnh sản phẩm">
+                </div>
+                <div class="text-center py-4">
+                    <a class="h5 text-decoration-none text-truncate" href="">MacBook Air M2 15</a>
+                    <div class="d-flex align-items-center justify-content-center mt-2">
+                        <h6>Products price $888</h6>
+                    </div>
+                    <div class="form-group">
+                        <label for="color">preliminary</label>
+                        <select id="color" class="form-control">
+                            <option value="red">Apple M1 chip delivers powerful machine learning, CPU and GPU performance</option>
+                            <option value="blue">Up to 18 hours of battery life, so you can use it longer than everNote1</option>
+                            <option value="black">Retina display with vivid colors and impressive details</option>
+                            <option value="black">Super-fast SSD storage opens apps and files in a snap</option>
+                            <option value="black">Fanless design minimizes noise when in use</option>
+                        </select>
+                    </div>
+                    <div class="btn">
+                    </div>
+                    <div class="btn">
+                        <button class="btn btn-outline-primary btn-light pl-3 pr-3"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                            fill="currentColor" class="bi bi-cart-plus" viewBox="0 0 16 16">
+                            <path d="M9 5.5a.5.5 0 0 0-1 0V7H6.5a.5.5 0 0 0 0 1H8v1.5a.5.5 0 0 0 1 0V8h1.5a.5.5 0 0 0 0-1H9V5.5z">
+                            </path>
+                            <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z">
+                            </path>
+                        </svg></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock %}
