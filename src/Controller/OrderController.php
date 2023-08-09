@@ -66,4 +66,34 @@ class OrderController extends AbstractController
             'message' => $message
         ]);
     }
+    #[Route('/order/ds', name: 'app_ds_order')]
+    public function list_o(EntityManagerInterface $em): Response
+    {
+        $query = $em->createQuery('SELECT orderItem FROM App\Entity\Order orderItem');
+        $lSp = $query->getResult();
+        return $this->render('order/list.html.twig', [
+            'data' => $lSp
+        ]);
+
+    }
+    #[Route('/order/dt', name: 'app_order_dt')]
+    public function dtView(Request $req, EntityManagerInterface $em): Response
+    {
+        $order = new Order();
+        $form = $this->createForm(OrderFormType::class, $order);
+        $form->handleRequest($req);
+
+        if ($form->isSubmitted() && $form->isValid()){
+            $data = $form->getData();
+            $em -> persist($data);
+            $em->flush();
+            return new RedirectResponse($this->urlGenerator->generate('app_ds_san_pham',));
+        }
+        $session = $req->getSession();
+        $cart_manager = $session->get('cart', new CartManager());
+        return $this->render('order/listdetail.html.twig', [
+            'order_form' => $form->createView(),
+            'cart_manager' =>$cart_manager
+        ]);
+    }
 }
